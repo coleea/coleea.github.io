@@ -15,7 +15,7 @@ export const siteConfig: SiteConfig = {
     fixed: false, // Hide the theme color picker for visitors
   },
   banner: {
-    enable: true,
+    enable: false,
     src: "./assets/images/Celestia.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
     // src: "./assets/images/demo-banner.DFyx781H_Z1SsDuN.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
     // src: "./assets/images/demo-banner.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
@@ -43,11 +43,11 @@ export const siteConfig: SiteConfig = {
 
 export const navBarConfig: NavBarConfig = {
   links: [
-    LinkPreset.Home,
-    LinkPreset.Archive,
-    LinkPreset.Series,
-    LinkPreset.About,
-    LinkPreset.Friends,
+    // LinkPreset.Home,
+    // LinkPreset.Archive,
+    // LinkPreset.Series,
+    // LinkPreset.About,
+    // LinkPreset.Friends,
     /*{
 			name: "GitHub",
 			url: "https://github.com/yCENzh", // Internal links should not include the base path, as it is automatically added
@@ -64,6 +64,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
   // avatar: "./assets/images/avatar.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/' 원assets/images/demo-avatar.png,선택https://q2.qlogo.cn/headimg_dl?dst_uin=189563385&spec=0
   avatar: "./assets/images/avatar3.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/' 원assets/images/demo-avatar.png,선택https://q2.qlogo.cn/headimg_dl?dst_uin=189563385&spec=0
+  // avatar: "",
   name: "leekb",
   bio: "bio",
   links: [
