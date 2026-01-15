@@ -13,7 +13,7 @@ import { url } from '@/utils/url-utils';
 const markdownParser = new MarkdownIt();
 
 function stripInvalidXmlChars(str: string): string {
-	return str.replace(
+	return str?.replace(
 		// biome-ignore lint/suspicious/noControlCharactersInRegex: https://www.w3.org/TR/xml/#charsets
 		/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F\uFDD0-\uFDEF\uFFFE\uFFFF]/g,
 		"",
@@ -56,14 +56,14 @@ export async function GET(context: APIContext) {
 				} else {
 					// 处理 ../image.jpg 的情况
 					const postDir = path.dirname(post.id);
-					const cleaned = src.replace(/^\.\.\//, '');
+					const cleaned = src?.replace(/^\.\.\//, '');
 					// 向上一级目录
 					const parentDir = path.dirname(postDir);
 					importPath = `/src/content/posts/${parentDir === '.' ? '' : parentDir + '/'}${cleaned}`;
 				}
 
 				// 规范化路径
-				importPath = path.normalize(importPath).replace(/\\/g, '/');
+				importPath = path.normalize(importPath)?.replace(/\\/g, '/');
 
 				try {
 					const imageMod = await imagesGlob[importPath]?.();
