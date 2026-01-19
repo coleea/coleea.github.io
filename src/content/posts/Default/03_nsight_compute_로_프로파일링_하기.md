@@ -4,7 +4,7 @@ published: 0001-01-01
 description: ""
 tags: []
 category: Default
-draft: false
+draft: true
 ---
 
 우분투 기준으로 설명한다

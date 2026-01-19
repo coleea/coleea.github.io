@@ -63,7 +63,8 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
   // avatar: "./assets/images/avatar.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/' 원assets/images/demo-avatar.png,선택https://q2.qlogo.cn/headimg_dl?dst_uin=189563385&spec=0
-  avatar: "./assets/images/avatar3.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/' 원assets/images/demo-avatar.png,선택https://q2.qlogo.cn/headimg_dl?dst_uin=189563385&spec=0
+  // avatar: "./assets/images/avatar3.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/' 원assets/images/demo-avatar.png,선택https://q2.qlogo.cn/headimg_dl?dst_uin=189563385&spec=0
+  avatar: "./assets/images/avatar_twitter_default_profile_400x400.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/' 원assets/images/demo-avatar.png,선택https://q2.qlogo.cn/headimg_dl?dst_uin=189563385&spec=0  
   // avatar: "",
   name: "leekb",
   bio: "bio",

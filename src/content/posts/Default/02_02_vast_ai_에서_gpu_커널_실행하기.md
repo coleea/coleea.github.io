@@ -4,7 +4,7 @@ published: 0001-01-01
 description: ""
 tags: []
 category: Default
-draft: false
+draft: true
 ---
 
 - 일단 GPU를 할당받는다

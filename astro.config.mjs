@@ -32,6 +32,13 @@ import { LinkCardComponent } from "./src/plugins/rehype-component-link-card.mjs"
 
 // https://astro.build/config
 export default defineConfig({
+  i18n: {
+    defaultLocale: "ko",
+    locales: ["ko", "en"],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   build: {
     concurrency: 1,
     compressHTML: true,
@@ -197,12 +204,12 @@ export default defineConfig({
 
   vite: {
     plugins: [
-      visualizer({
-        open: true,
-        gzipSize: true,
-        brotliSize: false,
-        filename: "dist/stats.html",
-      }),
+      // visualizer({
+      //   open: true,
+      //   gzipSize: true,
+      //   brotliSize: false,
+      //   filename: "dist/stats.html",
+      // }),
     ],
     build: {
       rollupOptions: {

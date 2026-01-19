@@ -4,7 +4,7 @@ published: 2025-12-19
 description: ""
 tags: []
 category: Default
-draft: false
+draft: true
 ---
 
 <!-- 이 글에서 부족한 점 : 최하단의 opencl로 작성된 코드가 실제로 어떻게 컴파일되는지 정보가 없음. 실제 컴파일을 해볼것 -->

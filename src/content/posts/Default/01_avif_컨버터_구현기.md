@@ -4,7 +4,7 @@ published: 0001-01-01
 description: ""
 tags: []
 category: Default
-draft: false
+draft: true
 ---
 
 # 나 자신한테 물어보라. 과연 이 프로그램이 무슨 가치가 있지?

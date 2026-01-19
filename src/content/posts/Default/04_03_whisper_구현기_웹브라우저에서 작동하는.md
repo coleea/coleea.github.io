@@ -4,7 +4,7 @@ published: 0001-01-01
 description: ""
 tags: []
 category: Default
-draft: false
+draft: true
 ---
 
 transformers.js에 이미 웹브라우저용 whisper가 구현되어 있기는 하다.

@@ -4,7 +4,7 @@ published: 2025-10-12
 description: ""
 tags: []
 category: Default
-draft: false
+draft: true
 ---
 
 1단계 : 모델을 생성한다
