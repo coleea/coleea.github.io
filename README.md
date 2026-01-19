@@ -1,3 +1,5 @@
+본래 빌드시 pagefind 명령어도 실행하였으나 server side rendering 수행시 에러가 발생하여 해당 기능을 중지하였음 "build": "astro build && pagefind --site dist",
+
 # 🍥Fuwari
 
 [Astro](https://astro.build)로 구축된 정적 블로그 템플릿입니다.

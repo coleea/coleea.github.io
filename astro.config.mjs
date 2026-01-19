@@ -34,7 +34,10 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  output : "static",
+  adapter: cloudflare(),
+
+  // output : "static",
+  output : "server",
   i18n: {
     defaultLocale: "ko",
     locales: ["ko", "en"],
@@ -238,5 +241,4 @@ export default defineConfig({
     },
   },
 
-  adapter: cloudflare(),
 });
