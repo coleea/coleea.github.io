@@ -36,7 +36,7 @@ export async function GET(context: APIContext) {
 	// console.debug('🐞context');
 	// console.debug(context);
 
-	const posts = await getSortedPosts();
+	const posts = await getSortedPosts({});
 	const feed: RSSFeedItem[] = [];
 
 	for (const post of posts) {

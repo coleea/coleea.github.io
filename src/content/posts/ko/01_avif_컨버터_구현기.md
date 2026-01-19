@@ -16,7 +16,7 @@ G:\my\avif-converter-rust-wasm-vite
 ## 작동 프로세스 설명
 
 - 핵심 로직은 다음과 같다
-
+ 
 - 유저로부터 이미지 파일을 입력받는다
 - File 인스턴스를 ArrayBuffer로 변환한다
 - UInt8Array로 포멧을 변환한다

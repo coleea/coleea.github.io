@@ -30,19 +30,26 @@ import mdx from "@astrojs/mdx";
 import rehypeExternalLinks from "rehype-external-links";
 import { LinkCardComponent } from "./src/plugins/rehype-component-link-card.mjs";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
+  output : "static",
   i18n: {
     defaultLocale: "ko",
     locales: ["ko", "en"],
     routing: {
-      prefixDefaultLocale: false,
+      // prefixDefaultLocale: true,
+      // redirectToDefaultLocale: true,
     },
+
   },
+
   build: {
     concurrency: 1,
     compressHTML: true,
   },
+
   prefetch: {
     prefetchAll: false,
     // 'tap': Prefetch just before you click on the link.
@@ -55,8 +62,11 @@ export default defineConfig({
   // site: "https://fuwari.oh1.top/",
   // site: "https://coleea.github.io",
   site: "https://leekb.com",
+
   base: "/",
-  trailingSlash: "always",
+  trailingSlash: "ignore",
+
+  // trailingSlash: "always",
 
   /*image: {
     service: {
@@ -227,4 +237,6 @@ export default defineConfig({
       assetsInlineLimit: 4096,
     },
   },
+
+  adapter: cloudflare(),
 });
