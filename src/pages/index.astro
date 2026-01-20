@@ -3,10 +3,12 @@ export const prerender = false ;
 
 const acceptLanguage = Astro.request.headers.get("accept-language") || '' ; 
 
-console.debug('🐞acceptLanguage');
-console.debug(acceptLanguage);
+console.log('🐞acceptLanguage');
+console.log(acceptLanguage);
 
 const userLocale = acceptLanguage.startsWith("ko") ? "ko" : "en" ; 
 
 return Astro.redirect(`/${userLocale}`, 301) ; 
 ---
+
+<div class="">index.astro</div>

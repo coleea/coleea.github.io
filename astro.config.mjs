@@ -38,15 +38,14 @@ export default defineConfig({
 
   output : "static",
   // output : "server",
-  i18n: {
-    defaultLocale: "ko",
-    locales: ["ko", "en"],
-    routing: {
-      // prefixDefaultLocale: true,
-      // redirectToDefaultLocale: true,
-    },
-
-  },
+  // i18n: {
+  //   defaultLocale: "ko",
+  //   locales: ["ko", "en"],
+  //   routing: {
+  //     // prefixDefaultLocale: true,
+  //     // redirectToDefaultLocale: true,
+  //   },
+  // },
 
   build: {
     concurrency: 1,
