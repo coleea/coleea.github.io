@@ -20,6 +20,8 @@ import type { Favicon } from "../types/config";
 import { pathsEqual, url } from "../utils/url-utils";
 import "katex/dist/katex.css";
 
+// ======================================================
+
 interface Props {
 	title?: string;
 	banner?: string;
@@ -53,6 +55,15 @@ const favicons: Favicon[] =
 
 const siteLang = "ko";
 
+// Determine current language from URL path
+const currentPath = Astro.url.pathname;
+const currentLang = currentPath.startsWith('/en') ? 'en' : 'ko';
+
+// Generate alternate URLs for hreflang
+const baseUrl = "https://leekb.com";
+const koPath = currentPath.replace(/^\/en/, '/ko');
+const enPath = currentPath.replace(/^\/ko/, '/en');
+
 const bannerOffsetByPosition = {
 	top: `${BANNER_HEIGHT_EXTEND}vh`,
 	center: `${BANNER_HEIGHT_EXTEND / 2}vh`,
@@ -62,8 +73,12 @@ const bannerOffset =
 	bannerOffsetByPosition[siteConfig.banner.position || "center"];
 ---
 
+		<!-- class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px]" -->
+
 <!DOCTYPE html>
-<html lang={siteLang} class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px]"
+<html lang={siteLang} 
+
+
 	  data-overlayscrollbars-initialize
 >
 	<head>
@@ -109,6 +124,11 @@ const bannerOffset =
 		<meta property="twitter:url" content={Astro.url}>
 		<meta name="twitter:title" content={pageTitle}>
 		<meta name="twitter:description" content={description || pageTitle}>
+
+		<!-- hreflang tags for multilingual SEO -->
+		<link rel="alternate" hreflang="ko" href={`${baseUrl}${koPath}`} />
+		<link rel="alternate" hreflang="en" href={`${baseUrl}${enPath}`} />
+		<link rel="alternate" hreflang="x-default" href={`${baseUrl}${enPath}`} />
 
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
@@ -481,7 +501,7 @@ function initPageContent() {
 /**
  * 设置 swup 钩子，用于处理客户端路由
  */
-function setupSwupHooks() {
+/* function setupSwupHooks() {
 	if (!window.swup) return;
 
 	window.swup.hooks.on('link:click', () => {
@@ -534,7 +554,7 @@ function setupSwupHooks() {
 			if (heightExtend) heightExtend.classList.add('hidden');
 		}, 200);
 	});
-}
+} */
 
 /**
  * 网站总入口函数
@@ -558,7 +578,7 @@ function initializeSite() {
 	window.onresize = resizeFunction;
 
 	// 设置 Swup 导航钩子
-	setupSwupHooks();
+	/* setupSwupHooks(); */
 
 	// 首次加载页面时，执行内容初始化
 	initPageContent();
@@ -570,9 +590,9 @@ function initializeSite() {
 }
 
 // 启动逻辑：等待 swup 可用后，初始化所有功能
-if (window.swup) {
+/* if (window.swup) {
 	initializeSite();
 } else {
 	document.addEventListener('swup:enable', initializeSite);
-}
+} */
 </script>

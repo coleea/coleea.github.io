@@ -5,7 +5,7 @@ import svelte from "@astrojs/svelte";
 import tailwindPlugin from "@astrojs/tailwind";
 import { pluginCollapsibleSections } from "@expressive-code/plugin-collapsible-sections";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
-import swupPlugin from "@swup/astro";
+// import swupPlugin from "@swup/astro";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
@@ -82,18 +82,18 @@ export default defineConfig({
       nesting: true,
     }),
     // partytown(),
-    swupPlugin({
-      theme: false,
-      animationClass: "transition-swup-",
-      containers: ["main", "#toc", "#series"],
-      smoothScrolling: true,
-      cache: true,
-      preload: true,
-      accessibility: true,
-      updateHead: true,
-      updateBodyClass: false,
-      globalInstance: true,
-    }),
+    // swupPlugin({
+    //   theme: false,
+    //   animationClass: "transition-swup-",
+    //   containers: ["main", "#toc", "#series"],
+    //   smoothScrolling: true,
+    //   cache: true,
+    //   preload: true,
+    //   accessibility: true,
+    //   updateHead: true,
+    //   updateBodyClass: false,
+    //   globalInstance: true,
+    // }),
     icon({
       include: {
         mdi: ["*"],
@@ -152,7 +152,15 @@ export default defineConfig({
     }),
     mdx(),
     svelte(),
-    sitemap(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'ko',
+        locales: {
+          ko: 'ko',
+          en: 'en',
+        },
+      },
+    }),
   ],
 
   markdown: {

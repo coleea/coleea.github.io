@@ -1,5 +1,12 @@
 본래 빌드시 pagefind 명령어도 실행하였으나 server side rendering 수행시 에러가 발생하여 해당 기능을 중지하였음 "build": "astro build && pagefind --site dist",
 
+- src\config.ts
+-> Google Search Results Page (SERP) 에 보이는 title과 description를 설정할 수 있다
+
+- sitemap은 `dist\sitemap-index.xml` 에서 확인가능
+
+- 
+
 # 🍥Fuwari
 
 [Astro](https://astro.build)로 구축된 정적 블로그 템플릿입니다.
